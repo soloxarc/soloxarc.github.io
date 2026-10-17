@@ -158,10 +158,14 @@ h2 { font-size: 1.5rem; margin: 0 0 16px; }
 }
 
 @media (max-width: 520px) {
-  .nav-links { gap: 14px; font-size: 0.95rem; }
+  .nav { gap: 16px; }
+  .nav-links { gap: 12px; font-size: 0.88rem; }
   .hero { padding: 56px 0 48px; }
 }
 
 /* Project cards */
 .project h4 { margin: 0 0 6px; font-size: 1.05rem; }
 .project p { margin: 0 0 10px; color: var(--muted); }
+.grid-wide { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+@media (max-width: 400px) { .grid-wide { grid-template-columns: 1fr; } }
+.project p:last-child { margin-bottom: 0; }
