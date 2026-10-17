@@ -161,3 +161,7 @@ h2 { font-size: 1.5rem; margin: 0 0 16px; }
   .nav-links { gap: 14px; font-size: 0.95rem; }
   .hero { padding: 56px 0 48px; }
 }
+
+/* Project cards */
+.project h4 { margin: 0 0 6px; font-size: 1.05rem; }
+.project p { margin: 0 0 10px; color: var(--muted); }
