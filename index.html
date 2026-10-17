@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zaheer | Personal Website</title>
+  <meta name="description" content="Personal website of Zaheer: about, projects and contact.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="#top">Zaheer</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <!-- TODO: replace with a real photo, e.g. <img class="avatar" src="assets/photo.jpg" alt="Zaheer"> -->
+      <div class="avatar" aria-hidden="true">Z</div>
+      <h1>Hi, I'm Zaheer.</h1>
+      <p class="tagline">[Your role or one-line headline, e.g. "Software engineer building things for the web."]</p>
+      <div class="cta">
+        <a class="button" href="#projects">See my work</a>
+        <a class="button button-ghost" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="about" class="container section">
+      <h2>About</h2>
+      <p>[A short bio: who you are, what you do, and what you care about. Two or three sentences is plenty.]</p>
+      <p>[Optional second paragraph: background, current focus, or interests outside work.]</p>
+    </section>
+
+    <section id="projects" class="container section">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Project One</h3>
+          <p>[One or two sentences about what it is and why it matters.]</p>
+          <a href="https://github.com/soloxarc">View on GitHub &rarr;</a>
+        </article>
+        <article class="card">
+          <h3>Project Two</h3>
+          <p>[One or two sentences about what it is and why it matters.]</p>
+          <a href="https://github.com/soloxarc">View on GitHub &rarr;</a>
+        </article>
+        <article class="card">
+          <h3>Project Three</h3>
+          <p>[One or two sentences about what it is and why it matters.]</p>
+          <a href="https://github.com/soloxarc">View on GitHub &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container section">
+      <h2>Contact</h2>
+      <p>The best way to reach me is by email, or find me on the links below.</p>
+      <ul class="links">
+        <li><a href="mailto:you@example.com">Email</a></li>
+        <li><a href="https://github.com/soloxarc">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">&copy; <span id="year">2026</span> Zaheer</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
