@@ -1,23 +1,13 @@
 :root {
   --bg: #ffffff;
-  --surface: #f6f7f9;
-  --text: #1c1e21;
-  --muted: #5f6670;
-  --accent: #2f6fed;
-  --border: #e3e6ea;
-  --radius: 12px;
+  --surface: #f4f7fc;
+  --text: #13233d;
+  --muted: #55657e;
+  --accent: #1a56db;
+  --accent-dark: #0f3c9e;
+  --border: #dde4ef;
+  --radius: 10px;
   --max: 880px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111317;
-    --surface: #1a1d23;
-    --text: #e8eaed;
-    --muted: #9aa1ab;
-    --accent: #6b9bff;
-    --border: #2a2e36;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -55,7 +45,7 @@ a:hover { text-decoration: underline; }
   justify-content: space-between;
   height: 60px;
 }
-.brand { font-weight: 700; color: var(--text); }
+.brand { font-weight: 700; color: var(--accent); }
 .nav-links {
   display: flex;
   gap: 20px;
@@ -64,68 +54,90 @@ a:hover { text-decoration: underline; }
   padding: 0;
 }
 .nav-links a { color: var(--muted); }
-.nav-links a:hover { color: var(--text); text-decoration: none; }
+.nav-links a:hover { color: var(--accent); text-decoration: none; }
 
 /* Hero */
 .hero {
-  padding-top: 80px;
-  padding-bottom: 60px;
-  text-align: center;
+  background: linear-gradient(180deg, var(--surface), var(--bg));
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0 64px;
 }
-.avatar {
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-  margin: 0 auto 24px;
-  display: grid;
-  place-items: center;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  font-size: 44px;
-  font-weight: 700;
+.eyebrow {
+  margin: 0 0 8px;
   color: var(--accent);
-  object-fit: cover;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
-h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 8px; line-height: 1.2; }
-.tagline { color: var(--muted); font-size: 1.15rem; margin: 0 0 28px; }
-.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+h1 { font-size: clamp(2.25rem, 6vw, 3rem); margin: 0 0 12px; line-height: 1.15; }
+.tagline { color: var(--muted); font-size: 1.15rem; margin: 0 0 28px; max-width: 36em; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
 
 .button {
   display: inline-block;
   padding: 10px 20px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--accent);
   color: #fff;
   font-weight: 600;
 }
-.button:hover { text-decoration: none; opacity: 0.9; }
+.button:hover { text-decoration: none; background: var(--accent-dark); }
 .button-ghost {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
+.button-ghost:hover { background: var(--surface); }
 
 /* Sections */
-.section {
-  padding-top: 48px;
-  padding-bottom: 48px;
-  border-top: 1px solid var(--border);
-}
+.section { padding-top: 48px; padding-bottom: 48px; }
+.section + .section { border-top: 1px solid var(--border); }
 h2 { font-size: 1.5rem; margin: 0 0 16px; }
+.subhead {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 28px 0 12px;
+}
+.subhead:first-of-type { margin-top: 0; }
 
+/* Career path */
+.path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.path li { display: flex; align-items: center; gap: 8px; }
+.path li + li::before { content: "\2192"; color: var(--muted); }
+.step {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  font-weight: 500;
+}
+.step-current { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* Industry cards */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
 }
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 18px 20px;
 }
-.card h3 { margin: 0 0 8px; font-size: 1.1rem; }
-.card p { margin: 0 0 12px; color: var(--muted); }
+.years { margin: 0 0 4px; color: var(--accent); font-weight: 700; font-size: 1.25rem; }
+.card h4 { margin: 0; font-size: 1rem; font-weight: 600; }
 
 .links {
   display: flex;
@@ -147,5 +159,5 @@ h2 { font-size: 1.5rem; margin: 0 0 16px; }
 
 @media (max-width: 520px) {
   .nav-links { gap: 14px; font-size: 0.95rem; }
-  .hero { padding-top: 56px; }
+  .hero { padding: 56px 0 48px; }
 }
